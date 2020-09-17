@@ -13,7 +13,10 @@ public class AppleTree : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     // dropping apples every second
+        // dropping apples every second
+        Invoke("DropApple", 2f);
+        //calls name of function in a certain number of seconds
+        //this case calls DropApple() wait for 2seconds = 2f
     }
 
     // Update is called once per frame
@@ -36,9 +39,22 @@ public class AppleTree : MonoBehaviour
         {
             speed = -Mathf.Abs(speed); // move left
         }
-        else if (Random.value < chanceToChangeDirections) // change direction
+
+    }
+
+    private void FixedUpdate() //depends on computer speed can cause a lot or less, so use fixedupdate
+    {
+        // changing direction randomly is now time-based because of fixedupdate
+        if (Random.value < chanceToChangeDirections)
         {
-            speed *= -1; //
+            speed *= -1; 
         }
+    }
+
+    void DropApple()
+    {
+        GameObject apple = Instantiate<GameObject>(applePrefab);
+        apple.transform.position = transform.position;
+        Invoke("DropApple", secondsBetweenAppleDrops);
     }
 }
