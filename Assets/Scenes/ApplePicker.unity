@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 232425126}
   - component: {fileID: 232425125}
   - component: {fileID: 232425124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 638325400}
   - component: {fileID: 638325399}
   - component: {fileID: 638325398}
+  - component: {fileID: 638325401}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -302,6 +303,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &638325401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638325397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d815d3fd49a9a84c92454c4461c9824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basketPrefab: {fileID: 4907976032144527752, guid: 87eff1abdf3aefd49ab820fa6a6b097c, type: 3}
+  numBaskets: 3
+  basketBottomY: -14
+  basketSpacingY: 2
 --- !u!1 &899804592
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +331,7 @@ GameObject:
   - component: {fileID: 899804596}
   - component: {fileID: 899804595}
   - component: {fileID: 899804594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +517,7 @@ GameObject:
   - component: {fileID: 1571313405}
   - component: {fileID: 1571313404}
   - component: {fileID: 1571313406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AppleTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +536,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -554,5 +571,5 @@ MonoBehaviour:
   applePrefab: {fileID: 735430313697160818, guid: 230560b57c75ae6498da59bd83b46c1f, type: 3}
   speed: 10
   leftAndRightEdge: 10
-  chanceToChangeDirections: 0.01
+  chanceToChangeDirections: 0.02
   secondsBetweenAppleDrops: 1
